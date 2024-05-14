@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class SubscriptionTypeDto {
 
+    private Long id;
     private String name;
     private Long accessMonth;
     private BigDecimal price;

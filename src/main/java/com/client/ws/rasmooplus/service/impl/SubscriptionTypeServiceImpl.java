@@ -1,6 +1,7 @@
 package com.client.ws.rasmooplus.service.impl;
 
 import com.client.ws.rasmooplus.dto.SubscriptionTypeDto;
+import com.client.ws.rasmooplus.exception.BadRequestException;
 import com.client.ws.rasmooplus.exception.NotFoundException;
 import com.client.ws.rasmooplus.model.SubscriptionType;
 import com.client.ws.rasmooplus.repository.SubscriptionTypeRepository;
@@ -9,6 +10,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
+import static java.util.Objects.nonNull;
 
 @Service
 @AllArgsConstructor
@@ -29,6 +32,10 @@ public class SubscriptionTypeServiceImpl implements SubscriptionTypeService {
 
     @Override
     public SubscriptionType create(SubscriptionTypeDto dto) {
+        if (nonNull(dto.getId())) {
+            throw new BadRequestException("Id deve ser nulo");
+        }
+
         return repository.save(SubscriptionType.builder()
                 .name(dto.getName())
                 .accessMonth(dto.getAccessMonth())
