@@ -12,7 +12,7 @@ public class CreditCardMapper {
                 .month(dto.getCardExpirationMonth())
                 .year(dto.getCardExpirationYear())
                 .number(dto.getCardNumber())
-                .installments(dto.getInstalments())
+                .installments(dto.getInstallments())
                 .build();
     }
 

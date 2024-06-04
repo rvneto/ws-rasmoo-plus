@@ -1,0 +1,1 @@
+alter table `user_payment_info` change `instalments` `installments` int;
