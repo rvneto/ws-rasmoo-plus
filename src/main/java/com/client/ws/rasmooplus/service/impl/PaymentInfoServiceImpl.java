@@ -56,9 +56,10 @@ public class PaymentInfoServiceImpl implements PaymentInfoService {
             userPaymentInfoRepository.save(userPaymentInfo);
 
             mailIntegration.send(user.getEmail(), "Usuário: " + user.getEmail() + " - Senha: alunorasmoo", "Acesso Liberado!");
+            return true;
         }
 
-        return null;
+        return false;
     }
 
 }

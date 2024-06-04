@@ -12,7 +12,7 @@ public class MailIntegrationTest {
 
     @Test
     void sendMailOK() {
-        mailIntegration.send("rvneto.rs@gmail.com", "Olá Gmail");
+        mailIntegration.send("rvneto.rs@gmail.com", "Olá Gmail", "Assunto");
     }
 
 }
